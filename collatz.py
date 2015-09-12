@@ -1,4 +1,5 @@
 __author__ = 'cwang'
+
 def collatz(B, k):
     steps = [None] * (B + 1)
     steps[1] = 0
@@ -44,3 +45,4 @@ if __name__ == '__main__':
     k = 1000
     # print(collatz(B, k))
     collatz(B, k)
+
