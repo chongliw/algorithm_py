@@ -1,6 +1,3 @@
-__author__ = 'cwang'
-
-
 def f(a):
     if a % 2 == 0:
         return a // 2
@@ -28,4 +25,4 @@ def count(b, k):
     return steps
 
 
-print(count(100, 10))
+print(count(10, 2))
