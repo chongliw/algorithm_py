@@ -50,5 +50,5 @@ if __name__ == '__main__':
     k = 200
     # print(collatz(B, k))
     print(collatz(B, k))
-    print(time.time() - start)
+    print(time.time() - start) # Suanshen zhen lihai
 
