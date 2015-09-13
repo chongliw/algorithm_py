@@ -16,6 +16,6 @@ def suffix_match(my_string):
     return(count)
 
 if __name__ == '__main__':
-    my_string = 'abab'
+    my_string = 'ababb'
     rlt = suffix_match(my_string)
     print(rlt)
