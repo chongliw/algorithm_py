@@ -1,5 +1,5 @@
 __author__ = 'cwang'
-
+import time
 # Collatz conjecture: x -> x * 3 + 1 or x -> x / 2 if x is odd or even.
 # Given B and k, determine how many numbers between 1 and B can go to 1 within k steps
 
@@ -18,7 +18,6 @@ def collatz(B, k):
             path.append(num)
             if num <= B and steps[num] is not None:
                 break
-
         sz = len(path)
         if num > B or steps[num] is None:
             for i in range(k):
@@ -46,8 +45,10 @@ def collatz(B, k):
     return count
 
 if __name__ == '__main__':
-    B = 100000000
-    k = 1000
+    start = time.time()
+    B = 10000000
+    k = 200
     # print(collatz(B, k))
     print(collatz(B, k))
+    print(time.time() - start)
 
