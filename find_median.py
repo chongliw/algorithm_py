@@ -20,15 +20,15 @@ def find_median(ls1, ls2, s1, e1, s2, e2):
         return med(arr, 0, len(arr))
     med1 = med(ls1, s1, e1)
     med2 = med(ls2, s2, e2)
-    skipsz = (e2 - s2) // 2
+    skipsz = (e2 - s2 - 1) // 2
     if med1 < med2:
         return find_median(ls1, ls2, s1 + skipsz, e1, s2, e2 - skipsz)
     else:
         return find_median(ls1, ls2, s1, e1 - skipsz, s2 + skipsz, e2)
 
 if __name__ == '__main__':
-    ls1 = list(range(1, 100000000, 2))
-    ls2 = list(range(2, 100000000, 2))
+    ls1 = [1, 4, 4.8, 8]
+    ls2 = [2, 3, 5, 6]
     start = time()
     if len(ls1) < len(ls2):
         swap = ls1
