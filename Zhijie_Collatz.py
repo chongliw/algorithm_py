@@ -1,3 +1,8 @@
+__author__ = "Zhijie Huang"
+
+
+import time
+
 def f(a):
     if a % 2 == 0:
         return a // 2
@@ -5,24 +10,33 @@ def f(a):
         return 3 * a + 1
 
 def count(b, k):
-    steps = [-1] * (b + 1)
+    steps = [-1 for i in range(b+1)]
     steps[1] = 0
 
     for i in range(2, b):
         if steps[i] == -1:
-            iterate_f_i = []
+            path = []
             l = i
-            for j in range(2 * k):
-                iterate_f_i.append(l)
+            for j in range(k):
+                path.append(l)
                 l = f(l)
-                if l < b and steps[l] != -1:
+                if l < b+1 and steps[l] != -1:
                     break
-            len_iter = len(iterate_f_i)
-            if l < b and steps[l] != -1:
-                for j in range(len_iter):
-                    if iterate_f_i[len_iter - 1 - j] < b:
-                        steps[iterate_f_i[len_iter - 1 - j]] = steps[l] + j + 1
+            len_path = len(path)
+            if l < b+1 and steps[l] != -1:
+                for j in range(len_path):
+                    if path[len_path - 1 - j] < b+1:
+                        steps[path[len_path - 1 - j]] = steps[l] + j + 1
     return steps
 
-
-print(count(10, 2))
+start = time.time()
+k = 200
+b = 10000000
+result = count(b,k)
+count = 0
+print(time.time() - start)
+for i in result:
+    if i >= 0 and i <= k:
+        count += 1
+print(count)
+print(time.time() - start)

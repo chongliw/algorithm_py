@@ -33,7 +33,7 @@ def collatz(B, k):
                 if number_of_steps < k and number_of_steps >= 0:
                     number_of_steps += 1
                 elif number_of_steps == k:
-                    number_of_steps = -1 # indicating impossibility within k steps
+                    number_of_steps = -1  # indicating impossibility within k steps
     # pairs = 0
     # for i, num in enumerate(steps):
     #     if i < B and steps[i] == steps[i + 1]:
@@ -44,11 +44,11 @@ def collatz(B, k):
     # print(steps.index(max(steps[1:])), max(steps[1:]))
     return count
 
+
 if __name__ == '__main__':
     start = time.time()
     B = 10000000
     k = 200
     # print(collatz(B, k))
     print(collatz(B, k))
-    print(time.time() - start) # Suanshen zhen lihai
-
+    print(time.time() - start)  # Suanshen zhen lihai
