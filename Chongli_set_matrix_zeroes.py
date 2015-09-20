@@ -15,10 +15,11 @@ class Solution(object):
                     if i and j:
                         matrix[i][0] = 0
                         matrix[0][j] = 0
-                    if not i:
-                        firstrow = True
-                    if not j:
-                        firstcol = True
+                    else:
+                        if not i:
+                            firstrow = True
+                        if not j:
+                            firstcol = True
 
         for i in range(1, num_rows):
             for j in range(1, num_cols):
