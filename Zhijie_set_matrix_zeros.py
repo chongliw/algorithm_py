@@ -2,6 +2,7 @@ __author__ = "Zhijie Huang"
 
 import numpy as np
 
+#zhenren nihai
 
 # this function sets those columns or rows contaning zero to be zeros.
 
