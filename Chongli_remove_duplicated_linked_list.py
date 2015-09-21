@@ -13,20 +13,18 @@ class Solution(object):
         """
         currPos = head
         inDistinct = True
-        init = False
         dhead, distLN = None, None
         while currPos is not None:
             currVal = currPos.val
             if currPos.next is None or currVal != currPos.next.val:
                 if inDistinct:
-                    if not init:
-                        distLN = ListNode(currVal)
-                        dhead = distLN
-                        init = True
-                    else:
+                    if dhead:
                         newLN = ListNode(currVal)
                         distLN.next = newLN
                         distLN = newLN
+                    else:
+                        distLN = ListNode(currVal)
+                        dhead = distLN
                 inDistinct = True
             elif inDistinct:
                 inDistinct = False
