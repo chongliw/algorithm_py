@@ -14,7 +14,7 @@ class Solution(object):
         currPos = head
         inDistinct = True
         init = False
-        dhead, distLN = None
+        dhead, distLN = None, None
         while currPos is not None:
             currVal = currPos.val
             if currPos.next is None or currVal != currPos.next.val:
