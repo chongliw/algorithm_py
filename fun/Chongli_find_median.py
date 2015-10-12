@@ -29,6 +29,8 @@ def find_median(ls1, ls2, s1, e1, s2, e2):
 def find_order(ls1, ls2, s1, e1, s2, e2, rk):
     rank2 = (e2 - s2) // 2
     if rank2 == 0:
+        if e2 == s2:
+            return ls1[rk - 1]
         num2 = ls2[s2]
         if rk == 1: return min(ls1[s1], num2)
         if rk == 1 + e1 - s1: return max(ls1[e1 - 1], num2)
@@ -48,8 +50,8 @@ def find_order(ls1, ls2, s1, e1, s2, e2, rk):
             return find_order(ls1, ls2, s1, s1 + rank1, s2 + rank2, e2, rank1)
 
 if __name__ == '__main__':
-    ls1 = [1, 4, 4.8, 8]
-    ls2 = [2, 3, 5, 6]
+    ls1 = []
+    ls2 = [2, 3]
     start = time()
     if len(ls1) < len(ls2):
         swap = ls1
@@ -57,7 +59,7 @@ if __name__ == '__main__':
         ls2 = swap
     result = find_median(ls1, ls2, 0, len(ls1), 0, len(ls2))
     print(result)
-    k = 8
+    k = 1
     krank = find_order(ls1, ls2, 0, len(ls1), 0, len(ls2), k)
     print(krank)
     print('running time=', time() - start)
